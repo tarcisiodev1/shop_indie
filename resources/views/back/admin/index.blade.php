@@ -74,7 +74,7 @@
                     DataTable Example
                 </div>
                 <div class="card-body">
-                    <table id="datatablesSimple">
+                    <table id="example">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -558,4 +558,15 @@
             </div>
         </div>
     </main>
+@endsection
+@section('js')
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+
+
+
+            // datatable
+            $('#example').DataTable();
+        })
+    </script>
 @endsection
