@@ -12,7 +12,7 @@
 
     <!-- Fonts -->
     <!-- Incluindo a fonte Roboto do Google Fonts com peso 100 -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet">
     <link href="css/all.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/v/dt/jq-3.7.0/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-html5-3.0.2/datatables.min.css"
         rel="stylesheet">
@@ -23,10 +23,9 @@
     {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
     <style>
         body,
-        table.dataTable,
-        {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 200;
+        table.dataTable {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 200;
         }
     </style>
 
