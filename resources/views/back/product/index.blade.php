@@ -4,7 +4,7 @@
 @section('content')
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Dashboard</h1>
+            <h1 class="mt-4">Products</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Products</li>
             </ol>
@@ -28,14 +28,14 @@
                             </tr>
                         </thead>
                         <tfoot>
-                            <tr>
+                            {{-- <tr>
                                 <th>Name</th>
                                 <th>Position</th>
                                 <th>Office</th>
                                 <th>Age</th>
                                 <th>Start date</th>
                                 <th>Salary</th>
-                            </tr>
+                            </tr> --}}
                         </tfoot>
                         <tbody>
                             <tr>
