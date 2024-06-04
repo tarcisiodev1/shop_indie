@@ -17,4 +17,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::get('/products', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/products/create', [ProductController::class, 'create'])->name('product.create');
 });
