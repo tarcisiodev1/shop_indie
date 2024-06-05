@@ -27,6 +27,12 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 300;
         }
+
+        .form-control:focus {
+            border-color: #cccccc;
+            ;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(0, 0, 0, 0.5);
+        }
     </style>
 
 </head>
