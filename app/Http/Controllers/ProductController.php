@@ -18,4 +18,11 @@ class ProductController extends Controller
 
         return view('back.product.create');
     }
+
+    public function destroy()
+    {
+
+
+        return view('back.product.create');
+    }
 }

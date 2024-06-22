@@ -22,7 +22,16 @@ class ProductsDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'products.action')
+            // ->addColumn('action', 'products.action')
+            ->addColumn('excluir', function ($query) {
+                $excluir = "<form action='" . route('admin.product.destroy', $query->id) . "' method='POST'>
+                                <input type='hidden' name='_method' value='DELETE'>
+                                <input type='hidden' name='_token' value='" . csrf_token() . "'>
+                                <button type='submit' class='btn btn-danger delete-item'><i class='far fa-trash-alt'></i></button>
+                            </form>";
+                return $excluir;
+            })
+            ->rawColumns(['excluir'])
             ->setRowId('id');
     }
 
@@ -43,7 +52,9 @@ class ProductsDataTable extends DataTable
             ->setTableId('products-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
+            //->deferLoading(27)
             ->processing(false)
+            ->responsive(true)
             //->dom('Bfrtip')
             ->orderBy(1)
             ->selectStyleSingle()
@@ -63,7 +74,7 @@ class ProductsDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::computed('action')
+            Column::computed('excluir')
                 ->exportable(false)
                 ->printable(false)
                 ->width(60)
