@@ -3,13 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\ProductsDataTable;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index(ProductsDataTable $productsDataTable)
+    protected $product;
+    protected $productsDataTable;
+
+    public function __construct(Product $product, ProductsDataTable $productsDataTable)
     {
-        return $productsDataTable->render('back.product.index');
+        $this->product = $product;
+        $this->productsDataTable = $productsDataTable;
+    }
+
+    public function index()
+    {
+        return $this->productsDataTable->render('back.product.index');
     }
 
     public function create()
@@ -19,10 +29,16 @@ class ProductController extends Controller
         return view('back.product.create');
     }
 
-    public function destroy()
+    public function destroy(String $id)
     {
 
 
-        return view('back.product.create');
+        $productId = $this->product->findOrFail($id);
+
+        if (!$productId) {
+            return response(['status' => 'error', 'message' => 'Produto não encontrado']);
+        }
+        $productId->delete();
+        return response(['status' => 'success', 'message' => 'Excluído com sucesso!']);
     }
 }

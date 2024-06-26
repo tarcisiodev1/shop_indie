@@ -24,11 +24,7 @@ class ProductsDataTable extends DataTable
         return (new EloquentDataTable($query))
             // ->addColumn('action', 'products.action')
             ->addColumn('excluir', function ($query) {
-                $excluir = "<form action='" . route('admin.product.destroy', $query->id) . "' method='POST'>
-                                <input type='hidden' name='_method' value='DELETE'>
-                                <input type='hidden' name='_token' value='" . csrf_token() . "'>
-                                <button type='submit' class='btn btn-danger delete-item'><i class='far fa-trash-alt'></i></button>
-                            </form>";
+                $excluir = "<button type='button' class='btn btn-danger delete-item' data-id='{$query->id}'><i class='far fa-trash-alt'></i></button>";
                 return $excluir;
             })
             ->rawColumns(['excluir'])
