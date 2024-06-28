@@ -22,6 +22,15 @@ class ProductController extends Controller
         return $this->productsDataTable->render('back.product.index');
     }
 
+    public function show(String $id)
+    {
+
+
+        $productId = $this->product->findOrFail($id);
+
+        return view("back.product.show", compact("productId"));
+    }
+
     public function create()
     {
 

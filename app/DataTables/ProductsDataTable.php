@@ -26,8 +26,12 @@ class ProductsDataTable extends DataTable
             ->addColumn('excluir', function ($query) {
                 $excluir = "<button type='button' class='btn btn-danger delete-item' data-id='{$query->id}'><i class='far fa-trash-alt'></i></button>";
                 return $excluir;
+            })->addColumn('name', function ($query) {
+                $url = route('admin.product.show', $query->id);
+                $link = "<a href=\"$url\">$query->name</a>";
+                return $link;
             })
-            ->rawColumns(['excluir'])
+            ->rawColumns(['excluir', 'name'])
             ->setRowId('id');
     }
 
@@ -60,7 +64,11 @@ class ProductsDataTable extends DataTable
                 Button::make('pdf'),
                 Button::make('print'),
                 Button::make('reset'),
-                Button::make('reload')
+                Button::make('reload'),
+                Button::make('create')
+                    ->text('Criar Produto')
+                    ->attr(['href' => route('admin.product.create')])
+                    ->addClass('btn-primary'),
             ]);
     }
 

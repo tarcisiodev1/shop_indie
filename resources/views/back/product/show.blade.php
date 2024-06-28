@@ -16,48 +16,14 @@
                     DataTable Example
                 </div>
                 <div class="card-body">
-                    {{ $dataTable->table() }}
+
+                    {{ $productId }}
+
                 </div>
             </div>
         </div>
     </main>
 @endsection
 @section('js')
-    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-    <script>
-        $('body').on('click', '.delete-item', function(e) {
-            e.preventDefault();
-
-            var id = $(this).data("id");
-            var url = "{{ route('admin.product.destroy', ':id') }}";
-            var urlWithId = url.replace(':id', id);
-            var result = confirm("Tem certeza de que deseja excluir este produto?");
-
-            if (result) {
-                $.ajax({
-                    type: "DELETE",
-                    url: urlWithId,
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    dataType: 'json',
-                    success: function(response) {
-                        if (response.status === 'success') {
-                            // $('#products-table').DataTable().row('#' + id).remove().draw();
-                            $('#products-table').DataTable().draw();
-                            toastr.success(response.message);
-                        } else {
-                            toastr.error(response.message);
-                        }
-                    },
-                    error: function(data) {
-                        console.log('Erro:', data);
-                        toastr.error("Ocorreu um erro ao excluir o produto.");
-                    }
-                });
-            } else {
-                return false;
-            }
-        });
-    </script>
+    <script></script>
 @endsection

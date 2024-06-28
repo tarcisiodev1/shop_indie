@@ -19,6 +19,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/products', [ProductController::class, 'index'])->name('product.index');
     Route::get('/products/create', [ProductController::class, 'create'])->name('product.create');
     Route::delete('/products/{products}', [ProductController::class, 'destroy'])->name('product.destroy');
+    Route::get('/products/{products}', [ProductController::class, 'show'])->name('product.show');
 });
 
 //product.destroy
