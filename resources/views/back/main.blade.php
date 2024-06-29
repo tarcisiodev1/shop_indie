@@ -16,7 +16,7 @@
 
     {{-- -------------------------------------------------------------------------------------------------- --}}
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('build/assets/app-FOKdml_h.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('build/assets/app-FOKdml_h.css') }}" rel="stylesheet" /> --}}
 
     {{-- -------------------------------------------------------------------------------------------------- --}}
 
@@ -40,7 +40,7 @@
     {{-- -------------------------------------------------------------------------------------------------- --}}
 
     <!-- Scripts -->
-    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
 
     <style>
@@ -74,8 +74,8 @@
     </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-    </script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script> --}}
 
     {{-- -------------------------------------------------------------------------------------------------- --}}
 
@@ -106,7 +106,8 @@
     {{-- <script src="js/datatables-simple-demo.js"></script> --}}
 
     {{-- -------------------------------------------------------------------------------------------------- --}}
-    <script src="{{ asset('build/assets/app-CuY4mDe9.js') }}"></script>
+
+    {{-- <script src="{{ asset('build/assets/app-CuY4mDe9.js') }}"></script> --}}
     <script src="{{ asset('js/scripts.js') }}"></script>
     @yield('js')
 </body>
