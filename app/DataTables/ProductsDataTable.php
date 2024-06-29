@@ -59,16 +59,19 @@ class ProductsDataTable extends DataTable
             ->orderBy(1)
             ->selectStyleSingle()
             ->buttons([
+                Button::make('add')->text("+ Novo"),
                 Button::make('excel'),
                 Button::make('csv'),
-                Button::make('pdf'),
+                // Button::make('pdf'),
                 Button::make('print'),
                 Button::make('reset'),
                 Button::make('reload'),
-                Button::make('create')
-                    ->text('Criar Produto')
-                    ->attr(['href' => route('admin.product.create')])
-                    ->addClass('btn-primary'),
+
+
+                // Button::make('create')
+                //     ->text('Criar Produto')
+                //     ->attr(['href' => route('admin.product.create')])
+                //     ->addClass('btn-primary'),
             ]);
     }
 
