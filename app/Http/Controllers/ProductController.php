@@ -31,6 +31,15 @@ class ProductController extends Controller
         return view("back.product.show", compact("productId"));
     }
 
+    public function edit(String $id)
+    {
+
+
+        $productId = $this->product->findOrFail($id);
+
+        return view("back.product.show", compact("productId"));
+    }
+
     public function create()
     {
 
