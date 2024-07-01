@@ -3,23 +3,23 @@
 
 @section('content')
     <main>
-        <div class="container px-4">
+        <div class="container-fluid px-4">
             <h1 class="mt-4">Products</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item active">Products</li>
             </ol>
 
 
-            <div class="card mb-4">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    DataTable Example
+                    Detalhes do Produto
                 </div>
                 <div class="card-body">
 
-                    <div class="row mt-5">
+                    <div class="row mt-3">
                         <div class="col-md-12">
-                            <h2>Detalhes do Produto</h2>
+
                             <a href="{{ route('admin.product.edit', $productId->id) }}" class="btn btn-primary mb-2">Editar
                                 Produto</a>
                             <div class="table-responsive">

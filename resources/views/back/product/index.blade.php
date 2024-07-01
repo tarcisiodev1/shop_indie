@@ -11,10 +11,10 @@
 
             <div class="card-header d-flex justify-content-between mb-4">
                 <div></div>
-                <div class="card-header-action ">
+                {{-- <div class="card-header-action ">
                     <a href="{{ route('admin.product.create') }}" class="btn btn-secundary "> <i class="fas fa-plus"></i>
                         Novo</a>
-                </div>
+                </div> --}}
 
             </div>
             <div class="card mb-4">
