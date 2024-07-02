@@ -21,6 +21,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::delete('/products/{products}', [ProductController::class, 'destroy'])->name('product.destroy');
     Route::get('/products/{products}', [ProductController::class, 'show'])->name('product.show');
     Route::get('/products/{products}/edit', [ProductController::class, 'edit'])->name('product.edit');
+    Route::post('/products', [ProductController::class, 'store'])->name('product.store');
 });
 
 //product.destroy
