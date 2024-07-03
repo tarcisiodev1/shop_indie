@@ -9,15 +9,15 @@
                 <li class="breadcrumb-item active">Produtos</li>
             </ol>
 
-            <div class="card-header d-flex justify-content-between mb-4">
+            {{-- <div class="card-header d-flex justify-content-between mb-4">
                 <div></div>
-                {{-- <div class="card-header-action ">
+                 <div class="card-header-action ">
                     <a href="{{ route('admin.product.create') }}" class="btn btn-secundary "> <i class="fas fa-plus"></i>
                         Novo</a>
-                </div> --}}
+                </div>
 
-            </div>
-            <div class="card mb-4">
+            </div> --}}
+            <div class="card mb-4 shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
                     DataTable Example

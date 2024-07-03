@@ -39,7 +39,7 @@ class ProductController extends Controller
 
         $productId = $this->product->findOrFail($id);
 
-        return view("back.product.show", compact("productId"));
+        return view("back.product.edit", compact("productId"));
     }
 
     public function store(Request $request)
