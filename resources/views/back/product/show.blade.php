@@ -56,17 +56,17 @@
                                         <!-- Outros campos do produto aqui -->
 
                                         <!-- Exibindo imagens do produto -->
-                                        {{-- @if ($productImages->count() > 0)
-                                            <tr>
-                                                <th>Imagens</th>
-                                                <td>
-                                                    @foreach ($productImages as $image)
-                                                        <img src="{{ asset('storage/assets/images/product_images/' . $image->nome_do_arquivo) }}"
-                                                            alt="Imagem do Produto">
-                                                    @endforeach
-                                                </td>
-                                            </tr>
-                                        @endif --}}
+
+                                        <tr>
+                                            <th>Imagens</th>
+                                            <td>
+
+                                                <img src="{{ asset('storage/assets/images/product_images/' . $productId->image) }}"
+                                                    alt="Imagem do Produto">
+
+                                            </td>
+                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
